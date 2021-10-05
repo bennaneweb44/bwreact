@@ -5,9 +5,8 @@ function Technologies() {
   return (    
     <div>
       <section className="services d-flex align-items-center " id="technologies">        
-        <div className="container text-light">            
-            <br className="d-xl-none d-xxl-block d-lg-none d-xl-block" />
-            <h2 className="py-2"><i className="fas fa-microchip"></i><span className="home_text"> Technologies</span></h2>
+        <div className="container text-light">                        
+            <h2><i className="fas fa-microchip"></i><span className="home_text"> Technologies</span></h2>
             <div className="row gy-4 py-2" data-aos="zoom-in">
                 <div className="col-lg-4">
                     <div className="card bg-transparent">

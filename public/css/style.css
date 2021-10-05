@@ -69,7 +69,7 @@ li {
 .plans,
 .work,
 .contact {
-	height: 110vh;
+	height: 100vh;
 	position: relative;
 }
 
@@ -102,7 +102,7 @@ li {
 .services .fas,
 .location .far,
 .location .fas {
-	padding: 25px 0 15px 0;
+	padding: 5px 0 15px 0;
 	background: -webkit-gradient(
 		linear,
 		left top,

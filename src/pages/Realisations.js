@@ -5,8 +5,8 @@ function Realisations() {
   return (    
     <div>
       <section className="services d-flex align-items-center " id="realisations">        
-        <div className="container text-light">            
-            <h2 className="py-1"><i className="fas fa-palette"></i><span className="home_text"> Réalisations</span></h2>
+        <div className="container text-light mt-5">            
+            <h2><i className="fas fa-palette"></i><span className="home_text"> Réalisations</span></h2>
             <div className="row gy-4 py-2" data-aos="zoom-in">
                 <div className="col-lg-4">
                     <div className="card bg-transparent">

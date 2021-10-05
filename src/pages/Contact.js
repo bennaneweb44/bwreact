@@ -4,9 +4,9 @@ import '../App.scss';
 function Contact() {
   return (    
     <div>
-      <div className="container-fluid services text-light pt-5" id="contact">
-        <div className="container">
-          <div className="row">
+      <div className="services d-flex text-light align-items-center" id="contact">
+        <div className="container mt-5">
+          <div className="row pt-6">
             <div className="col-lg-6 d-flex align-items-center px-lg-7" data-aos="fade-right">
                 <div className="w-90 mr-0">
                     <div className="text-center text-lg-start py-4 pt-lg-0">                  
