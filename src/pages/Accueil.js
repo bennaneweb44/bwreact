@@ -36,13 +36,13 @@ function Navigation() {
             <h1 className="headline"><span className="home_text">Aziz BENNANE</span><br />Développeur full-stack</h1>
             <p className="para para-light py-4">Développement backend et frontend sur mesure !</p>
             <div className="d-flex align-items-center">
-              <p className=""><i className="fas fa-edit fa-lg"></i> Etude du besoin.</p>
+              <p><span className="text-center"><i className="fas fa-edit fa-lg text-end logoEtude"></i></span> Etude du besoin.</p>
             </div>
             <div className="d-flex align-items-center">
-              <p className=""><i className="fas fa-drafting-compass fa-lg"></i> Conception.</p>              
+              <p><span className="text-center"><i className="fas fa-circle fa-drafting-compass fa-lg logoConception"></i></span> Conception.</p>              
             </div>            
             <div className="d-flex align-items-center">
-              <p className=""><i className="fas fa-file-code fa-lg"></i> Développement.</p>              
+              <p><span className="text-center"><i className="fas fa-file-code fa-lg logoDev"></i></span> Développement.</p>              
             </div>
             <div className="my-5">
               <a className="btn" href="#realisations">Réalisations</a>
