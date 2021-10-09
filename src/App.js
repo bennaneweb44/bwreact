@@ -4,6 +4,7 @@ import Technologies from './pages/Technologies.js'
 import Realisations from './pages/Realisations.js'
 import Contact from './pages/Contact.js'
 import FooterFirst from './pages/FooterFirst.js'
+import FooterSecond from './pages/FooterSecond.js'
 import UpArrow from './pages/UpArrow/UpArrow.js'
 import './App.css';
 
@@ -38,6 +39,7 @@ function App() {
       { isVisible &&
         <UpArrow></UpArrow>
       }
+      <FooterSecond></FooterSecond>
     </div>
   );
 }
