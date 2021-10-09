@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import '../App.scss';
-import Logo from '../images/favicon.png';
+import React, {useState} from 'react'
+import '../App.scss'
 
 function Navigation() {
 
