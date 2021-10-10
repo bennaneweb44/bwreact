@@ -4,13 +4,15 @@ import '../App.scss'
 function FooterSecond() {
   return (    
     <div>
-      <div class="bottom py-2 text-light" >
-        <div class="container" >
-          <div class="my-3 text-center">
-              <p class="pt-3 pb-0">Bennane Web © 2021 </p><br />
-              <a href="https://www.linkedin.com/in/aziz-bennane/" target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-linkedin fa-2x py-2"></i>
-              </a>
+      <div className="bottom py-2 text-light" >
+        <div className="container" >
+          <div className="my-3 text-center">
+              <p className="pt-3 pb-0">
+                <span className="mr-3">Bennane Web © 2021 </span>                
+                <a href="https://www.linkedin.com/in/aziz-bennane/" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-linkedin fa-1x py-2"></i>
+                </a>              
+              </p>               
           </div>
         </div> 
       </div> 

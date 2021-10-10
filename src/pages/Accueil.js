@@ -20,7 +20,7 @@ function Navigation() {
         <div className="container">
           <a className="navbar-brand logo-text" onClick={closeMenu} href="index.html"><i>Bennane Web</i></a>
 
-          <button className="custom-toggler p-0 border-0 text-light d-xs-block d-sm-block d-md-none" id="navbarSideCollapse" type="button" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded={!isNavCollapsed ? true : false} onClick={handleNavCollapse}>
+          <button className="custom-toggler p-0 border-0 text-light d-lg-none" id="navbarSideCollapse" data-toggle="collapse" type="button" data-target="#navbarsExampleDefault"  aria-expanded={!isNavCollapsed ? true : false} onClick={handleNavCollapse}>
               <span className="navbar-toggler-icon" ></span>
           </button>
 
@@ -45,7 +45,7 @@ function Navigation() {
       </nav> 
 
       <section className="home py-5 d-flex" id="home">
-        <div className="container text-light mt-5" data-aos="fade-right"> 
+        <div className="container text-light mt-5 mb-5" data-aos="fade-right"> 
             <h1 className="headline"><span className="home_text">Aziz BENNANE</span><br />Développeur full-stack</h1>
             <p className="para para-light py-4">Développement backend et frontend sur mesure !</p>
             <div className="d-flex align-items-center">
