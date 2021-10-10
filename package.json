@@ -27,10 +27,10 @@
     "webpack": "^1.12.14"
   },
   "scripts": {
-      "build": "webpack --progress --colors",
-      "watch": "webpack --progress --colors --watch",
-      "start": "node server.js",
-      "package": "webpack --progress --colors -p"
+    "build": "webpack --progress --colors",
+    "watch": "webpack --progress --colors --watch",
+    "start": "node server.js",
+    "package": "webpack --progress --colors -p"
   },
   "eslintConfig": {
     "extends": [
