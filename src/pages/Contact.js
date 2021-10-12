@@ -1,5 +1,39 @@
 import React from 'react';
+import Axios from 'axios'
 import '../App.scss';
+
+window.addEventListener('click', function(e) {
+  if (document.getElementById('sendEmail').contains(e.target)) {
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+
+    let data = {
+      'name': 'aziz',
+      'telephone': '0760715758',
+      'email': 'aziz44000@yahoo.fr',
+      'message': 'ca va'
+    }
+    
+    Axios.post('http://127.0.0.1:8000/email/send', data, {
+        headers: headers
+    })
+      .then((response) => {
+        console.log('its ok ....');
+        console.log(response)
+        //TODO: toast here
+        //TODO: toast here
+        //TODO: toast here
+        //ok
+    })
+    .catch((error) => {
+      //TODO: toast here
+      //TODO: toast here
+      //TODO: toast here
+      console.error('ERROR ....'+error.message);
+    })
+  }
+})
 
 function Contact() {
   return (    
@@ -34,7 +68,7 @@ function Contact() {
                         </div>                            
                     </div>
                     <div className="my-3">
-                        <a className="btn form-control-submit-button" href="#your-link">Envoyer</a>
+                        <button className="btn form-control-submit-button" id="sendEmail">Envoyer</button>
                     </div>
                 </div>
             </div>
