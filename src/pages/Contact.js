@@ -15,7 +15,7 @@ window.addEventListener('click', function(e) {
       'message': 'ca va'
     }
     
-    Axios.post('http://127.0.0.1:8000/email/send', data, {
+    Axios.post('https://services.bennaneweb.fr/email/send', data, {
         headers: headers
     })
       .then((response) => {
