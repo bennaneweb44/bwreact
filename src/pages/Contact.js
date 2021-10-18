@@ -29,7 +29,7 @@ function Contact() {
         message: message
       }
       
-      Axios.post('http://127.0.0.1:8000/email/send', data, {
+      Axios.post('https://services.bennaneweb.fr/email/send', data, {
           headers: headers
       })
         .then((response) => {
