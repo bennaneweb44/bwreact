@@ -71,7 +71,7 @@ function Contact() {
         message: message
       }
       
-      Axios.post('http://localhost:8000/email/send', data, {
+      Axios.post('https://services.bennaneweb.fr/email/send', data, {
           headers: headers
       })
         .then((response) => {
