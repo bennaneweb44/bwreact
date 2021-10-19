@@ -57,7 +57,7 @@ function Contact() {
       !toastActive && showToast('Le téléphone est invalide !', true)            
       return
     }
-    else if (name && email && Validator.isEmail(email) && telephone && message) {
+    else if (name && name.trim() !== '' && email && telephone && message && message.trim() !== '') {
       setLoaderActive(true)
 
       const headers = {
@@ -82,11 +82,13 @@ function Contact() {
           setEmailSent(true);
 
           !toastActive && showToast('Demande reçue. Je vous contacterai bientôt.', false)
-          setLoaderActive(false)
-          setToastActive(false)
       })
       .catch((error) => {
         !toastActive && showToast('Une erreur interne s\'est produite, message non envoyé !', true)
+      })
+      .finally( () => {
+        setLoaderActive(false)
+        setToastActive(false)
       })
     } else {
       !toastActive && showToast('Au moins un des champs est vide !', true)
