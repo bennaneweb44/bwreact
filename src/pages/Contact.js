@@ -28,6 +28,9 @@ function Contact() {
   const [toastStyle, setToastStyle] = useState(ToastErrorStyle)
   const [toastActive, setToastActive] = useState(false)
 
+  // Loader
+  const [loaderActive, setLoaderActive] = useState(false)
+
   const showToast = (message, withError) => {
     setToastActive(true)
 
@@ -46,19 +49,17 @@ function Contact() {
   const submit = (e) => {
     e.preventDefault()
 
-    if (email && !Validator.isEmail(email)) {
-      if (!toastActive) {
-        !toastActive && showToast('L\'adresse e-mail est invalide !', true)        
-      }      
+    if (email && !Validator.isEmail(email)) {      
+      !toastActive && showToast('L\'adresse e-mail est invalide !', true)                    
       return
     }
-    else if (telephone && !Validator.isNumeric(telephone, 'fr-FR')) {
-      if (!toastActive) {
-        !toastActive && showToast('Le téléphone est invalide !', true)
-      }      
+    else if (telephone && !Validator.isNumeric(telephone, 'fr-FR')) {      
+      !toastActive && showToast('Le téléphone est invalide !', true)            
       return
     }
     else if (name && email && Validator.isEmail(email) && telephone && message) {
+      setLoaderActive(true)
+
       const headers = {
         'Content-Type': 'application/json'
       }
@@ -70,7 +71,7 @@ function Contact() {
         message: message
       }
       
-      Axios.post('https://services.bennaneweb.fr/email/send', data, {
+      Axios.post('http://localhost:8000/email/send', data, {
           headers: headers
       })
         .then((response) => {
@@ -81,9 +82,11 @@ function Contact() {
           setEmailSent(true);
 
           !toastActive && showToast('Demande reçue. Je vous contacterai bientôt.', false)
+          setLoaderActive(false)
+          setToastActive(false)
       })
       .catch((error) => {
-        !toastActive && showToast('Une erreur interne s\'est produite !', true)
+        !toastActive && showToast('Une erreur interne s\'est produite, message non envoyé !', true)
       })
     } else {
       !toastActive && showToast('Au moins un des champs est vide !', true)
@@ -113,30 +116,27 @@ function Contact() {
                           <div className="form-group py-2">
                             <input type="text" className={`form-control form-control-input border border-default`} value={name} onChange={e => setName(e.target.value)} placeholder="Nom" />
                           </div>                                
-                                </div>                                
-                          </div>                                
                         </div>
                         <div className="col-md-6">
                           <div className="form-group py-2">
                             <input type="email" className={`form-control form-control-input border border-default`} value={telephone} onChange={e => setTelephone(e.target.value)} placeholder="Numéro de téléphone" />
-                          </div>                                 
-                                </div>                                 
-                          </div>                                 
+                          </div>                               
                         </div>
                       </div>
                       <div className="form-group py-1">
                         <input type="email" className={`form-control form-control-input border border-default`} value={email} onChange={e => setEmail(e.target.value)} placeholder="E-mail" />
-                      </div>  
-                        </div>  
-                      </div>  
+                      </div>   
                       <div className="form-group py-2">
                         <textarea className={`form-control form-control-input border border-default`} value={message} onChange={e => setMessage(e.target.value)} rows="6" placeholder="Message"></textarea>
                       </div>                            
-                        </div>                            
-                      </div>                            
                     </div>
                     <div className="my-3">
-                        <button onClick={submit} disabled={toastActive} className="btn form-control-submit-button">Envoyer</button>
+                      <button onClick={submit} disabled={toastActive || loaderActive} className="btn form-control-submit-button">
+                        { loaderActive &&  
+                          <div className="spinner-border spinner-grow-sm text-pink mr-5">
+                            <span className="sr-only">Loading...</span>
+                          </div> } Envoyer
+                      </button>
                     </div>             
                 </div>
             </div>
