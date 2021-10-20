@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Axios from 'axios'
 import Validator from 'validator'
-import '../App.scss';
+import '../App.scss'
+
+require('dotenv').config()
 
 const ToastErrorStyle = { 
   color: '#ff7562', 
@@ -61,7 +63,8 @@ function Contact() {
       setLoaderActive(true)
 
       const headers = {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + process.env.REACT_APP_EMAIL_APP_KEY
       }
 
       let data = {
@@ -71,7 +74,7 @@ function Contact() {
         message: message
       }
       
-      Axios.post('https://services.bennaneweb.fr/email/send', data, {
+      Axios.post(process.env.REACT_APP_API_CONTACT_EP, data, {
           headers: headers
       })
         .then((response) => {
