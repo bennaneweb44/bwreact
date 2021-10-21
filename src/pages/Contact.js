@@ -77,14 +77,16 @@ function Contact() {
       Axios.post(process.env.REACT_APP_API_CONTACT_EP, data, {
           headers: headers
       })
-        .then((response) => {
-          setName('');
-          setTelephone('');
-          setEmail('');
-          setMessage('');
-          setEmailSent(true);
+      .then((response) => {          
+          if (response.status === 200) {
+            setName('');
+            setTelephone('');
+            setEmail('');
+            setMessage('');
+            setEmailSent(true);
 
-          !toastActive && showToast('Demande reçue. Je vous contacterai bientôt.', false)
+            !toastActive && showToast(response.data, false)
+          }          
       })
       .catch((error) => {
         !toastActive && showToast('Une erreur interne s\'est produite, message non envoyé !', true)
