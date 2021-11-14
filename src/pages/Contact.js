@@ -24,7 +24,6 @@ function Contact() {
   const [telephone, setTelephone] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [emailSent, setEmailSent] = useState(false)
 
   // Toasts
   const [toastStyle, setToastStyle] = useState(ToastErrorStyle)
@@ -56,7 +55,7 @@ function Contact() {
       return
     }
     else if (telephone && !Validator.isNumeric(telephone, 'fr-FR')) {      
-      !toastActive && showToast('Le téléphone est invalide !', true)            
+      !toastActive && showToast('Le téléphone n\'est pas numérique !', true)            
       return
     }
     else if (name && name.trim() !== '' && email && telephone && message && message.trim() !== '') {
@@ -79,11 +78,10 @@ function Contact() {
       })
       .then((response) => {          
           if (response.status === 200) {
-            setName('');
-            setTelephone('');
-            setEmail('');
-            setMessage('');
-            setEmailSent(true);
+            setName('')
+            setTelephone('')
+            setEmail('')
+            setMessage('')
 
             !toastActive && showToast(response.data, false)
           }          
@@ -114,11 +112,6 @@ function Contact() {
                     </div>
                     <div>
                       <div className="row" >
-                        <div className="col-md-12">
-                          <div className={`my-3 bg-success text-center rounded mt-4 border border-white ${emailSent && 1==2 ? "visible" : "d-none"}`} >
-                            <span><i className="fa fa-check"></i> Demande reçue. Je vous contacterai bientôt !</span>
-                          </div> 
-                        </div>
                         <div className="col-md-6">
                           <div className="form-group py-2">
                             <input type="text" className={`form-control form-control-input border border-default`} value={name} onChange={e => setName(e.target.value)} placeholder="Nom" />
@@ -154,7 +147,7 @@ function Contact() {
         </div>        
       </div>
     </div>
-  );
+  )
 }
 
-export default Contact;
+export default Contact
