@@ -11,7 +11,7 @@ function Realisations() {
                 <div className="col-lg-4">
                     <div className="card bg-transparent">
                         <h4 className="py-1">Pricing</h4>
-                        <p className="para-light">Outil de placement de produits face à la concurrence.<br />- <u>Stack</u> : Symfony 4.3, Twig, JQuery</p>
+                        <p className="para-light">Application de placement de produits face à la concurrence.<br />- <u>Stack</u> : Symfony 4.3, Twig, JQuery</p>
                         <div className="my-3">
                             <a className="btn float-end" target="_blank" rel="noopener noreferrer" href="https://pricing.bennaneweb.fr">Visiter</a>
                         </div>
@@ -29,7 +29,7 @@ function Realisations() {
                 <div className="col-lg-4">
                     <div className="card bg-transparent">
                         <h4 className="py-1">Geolocip</h4>
-                        <p className="para-light">Outil de géolocalisation des adresses IP publiques.<br />- <u>Stack</u> : React 17, Leaflet 1.7</p>
+                        <p className="para-light">Ce site permet de géolocaliser des adresses IP publiques.<br />- <u>Stack</u> : React 17, Leaflet 1.7</p>
                         <div className="my-3">
                             <a className="btn float-end" target="_blank" rel="noopener noreferrer" href="https://geolocip.bennaneweb.fr">Visiter</a>
                         </div>
